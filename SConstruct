@@ -19,7 +19,7 @@ if platform == 'darwin':
 	if GetOption('app'):
 		STATIC = 1
 
-BuildDir('build', 'src', duplicate = 0)
+VariantDir('build', 'src', duplicate = 0)
 
 SConscript('build/SConscript',
 	exports = ['env', 'platform', 'ANIMATA_VERSION',

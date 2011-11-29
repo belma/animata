@@ -219,9 +219,11 @@ class FLU_EXPORT Flu_Tree_Browser : public Fl_Group
   inline void color( Fl_Color c )
     { _box->color( c ); }
 
+#if (FL_MAJOR_VERSION <= 1) && (FL_MINOR_VERSION < 3)
   //! Set the background color of the browser. Default is FL_WHITE
   inline void color( unsigned c )
     { _box->color( (Fl_Color)c ); }
+#endif
 
   //! Set the color, style, and width of the connector lines. Default is FL_DARK2, FL_DOT, 1
   inline void connector_style( Fl_Color color, int style, int width = 1 )
@@ -495,9 +497,11 @@ class FLU_EXPORT Flu_Tree_Browser : public Fl_Group
   inline void selection_color( Fl_Color c )
     { rdata.defSelectionColor = c; }
 
+#if (FL_MAJOR_VERSION <= 1) && (FL_MINOR_VERSION < 3)
   //! Set the color to use when hilighting selected entries. Default is FL_SELECTION_COLOR
   inline void selection_color( unsigned c )
     { selection_color( (Fl_Color)c ); }
+#endif
 
   //! Set how selection is affected when the mouse is dragged. This can be one of FLU_DRAG_IGNORE, FLU_DRAG_TO_SELECT, FLU_DRAG_TO_MOVE. Default is FLU_DRAG_TO_SELECT.
   inline void selection_drag_mode( int m )
