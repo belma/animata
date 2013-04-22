@@ -127,7 +127,8 @@ if platform == 'darwin':
 
 import os
 if platform == 'posix':
-	env['ENV']['DISPLAY'] = os.environ['DISPLAY']
+	if 'DISPLAY' in os.environ:
+		env['ENV']['DISPLAY'] = os.environ['DISPLAY']
 	if 'LIBGL_DRIVERS_PATH' in os.environ:
 		env['ENV']['LIBGL_DRIVERS_PATH'] = os.environ['LIBGL_DRIVERS_PATH']
 
