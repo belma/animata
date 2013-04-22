@@ -116,13 +116,6 @@ if not GetOption('clean'):
 
 env.Program(source = SOURCES, target = TARGET)
 
-# post build actions
-
-if platform == 'darwin':
-	REZ = '/Developer/Tools/Rez' 
-	AddPostAction(TARGET,
-		'%s -t APPL -o $TARGET /opt/local/include/FL/mac.r' % REZ)
-
 # run
 
 import os
