@@ -22,6 +22,7 @@
 */
 
 #include <iostream>
+#include <unistd.h>
 
 #include "animata.h"
 #include "animataUI.h"
